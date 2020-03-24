@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Quote from './components/quotes';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const theQuote = "Chuck Norris doesn’t read books. He stares them down until he gets the information he wants.";
+
+    return (
+      <div className="App">
+        <header className="App-header">Chuckkkkkkk
+        </header>
+        <Quote quote={theQuote}/>
+      </div>
+    );
 }
 
 export default App;
