@@ -6,12 +6,18 @@ class Quote extends Component {
         quote: "Fetching a quote..."
     }
 
-    componentDidMount() {
-        setTimeout (() => {
+    async componentDidMount() {
+        try {
+            const response = await fetch("https://api.chucknorris.io/jokes/random?category=dev");
+            const data = await response.json();
             this.setState({
-                quote: "Chuck Norris does not care about your rules."
+                quote: data.value
             })
-        }, 2000);
+        } catch (error) {
+            this.setState({
+                error: error.message
+            })
+        }      
     }
 
     render() {
